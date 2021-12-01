@@ -1,5 +1,5 @@
 .container-fluid {
-    min-width: 980px;
+    width: 100%;
     background: #fafafa !important;
     overflow-x: hidden;
 }
@@ -7,7 +7,11 @@
 #ivilon-nav {
     background: #2f2e2e !important;
     height: 64px;
-    min-width: 980px;
+    width: 100%;
+}
+
+#navbar-content {
+    background: #2f2e2e !important;
     width: 100%;
 }
 
@@ -117,8 +121,8 @@
 
 .pop-up-banner {
     position: absolute;
-    top: 225px;
-    width: 280px;
+    top: 52%;
+    width: 100%;
     height: 48px;
     text-align: center;
     line-height: 48px;
@@ -139,7 +143,7 @@
 }
 
 .product-btn:hover {
-    border: 3px solid black;
+    border: 2px solid black !important;
     transition: 300ms;
 }
 
@@ -210,6 +214,10 @@
     width: 270px;
 }
 
+.card-text {
+    word-wrap: break-word;
+}
+
 .showcase-img {
     height: 178px;
     width: 178px;
@@ -228,11 +236,13 @@
 #contact-back {
     background: #b0aaa9;
     height: 644px;
+    overflow: auto;
 }
 
 .form-wrap {
-    height: 575px;
-    width: 659px;
+    height: 90%;
+    max-width: 659px;
+    min-width: 600px;
     visibility: hidden;
     opacity: 0;
     transition: 1s;

@@ -61,25 +61,73 @@ document.addEventListener("scroll", function() {
 
 /** hover effects over product cards **/
 document.querySelector("#item1").addEventListener("mouseover", function() {
-    document.querySelector("#banner1").style.top = "177px";
+    document.querySelector("#banner1").style.top = "41%";
 });
 
 document.querySelector("#item1").addEventListener("mouseout", function() {
-    document.querySelector("#banner1").style.top = "225px";
+    document.querySelector("#banner1").style.top = "52%";
 });
 
 document.querySelector("#item2").addEventListener("mouseover", function() {
-    document.querySelector("#banner2").style.top = "177px";
+    document.querySelector("#banner2").style.top = "41%";
 });
 
 document.querySelector("#item2").addEventListener("mouseout", function() {
-    document.querySelector("#banner2").style.top = "225px";
+    document.querySelector("#banner2").style.top = "52%";
 });
 
 document.querySelector("#item3").addEventListener("mouseover", function() {
-    document.querySelector("#banner3").style.top = "177px";
+    document.querySelector("#banner3").style.top = "41%";
 });
 
 document.querySelector("#item3").addEventListener("mouseout", function() {
-    document.querySelector("#banner3").style.top = "225px";
+    document.querySelector("#banner3").style.top = "52%";
+});
+
+document.querySelector("#item4").addEventListener("mouseover", function() {
+    document.querySelector("#banner4").style.top = "41%";
+});
+
+document.querySelector("#item4").addEventListener("mouseout", function() {
+    document.querySelector("#banner4").style.top = "52%";
+});
+
+document.querySelector("#item5").addEventListener("mouseover", function() {
+    document.querySelector("#banner5").style.top = "41%";
+});
+
+document.querySelector("#item5").addEventListener("mouseout", function() {
+    document.querySelector("#banner5").style.top = "52%";
+});
+
+document.querySelector("#item6").addEventListener("mouseover", function() {
+    document.querySelector("#banner6").style.top = "41%";
+});
+
+document.querySelector("#item6").addEventListener("mouseout", function() {
+    document.querySelector("#banner6").style.top = "52%";
+});
+
+document.querySelector("#item7").addEventListener("mouseover", function() {
+    document.querySelector("#banner7").style.top = "41%";
+});
+
+document.querySelector("#item7").addEventListener("mouseout", function() {
+    document.querySelector("#banner7").style.top = "52%";
+});
+
+document.querySelector("#item8").addEventListener("mouseover", function() {
+    document.querySelector("#banner8").style.top = "41%";
+});
+
+document.querySelector("#item8").addEventListener("mouseout", function() {
+    document.querySelector("#banner8").style.top = "52%";
+});
+
+document.querySelector("#item9").addEventListener("mouseover", function() {
+    document.querySelector("#banner9").style.top = "41%";
+});
+
+document.querySelector("#item9").addEventListener("mouseout", function() {
+    document.querySelector("#banner9").style.top = "52%";
 });
