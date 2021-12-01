@@ -1,0 +1,340 @@
+.container-fluid {
+    min-width: 980px;
+    background: #fafafa !important;
+    overflow-x: hidden;
+}
+
+#ivilon-nav {
+    background: #2f2e2e !important;
+    height: 64px;
+    min-width: 980px;
+    width: 100%;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.nav-link {
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    color: #938d86 !important;
+}
+
+.parallax-container {
+    height: 1100px;
+    width: 100%;
+    min-width: 980px;
+    position: relative;
+}
+
+.parallax-back {
+    height: 1100px;
+    width: 100%;
+    min-width: 980px;
+    background-image: url(resources/ivi_back.webp);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 0;
+    opacity: 0.5;
+}
+
+.overlay {
+    content: "";
+    background-color: rgba(213, 202, 196, 0.50);
+    position: absolute;
+    min-height: 1100px;
+    width: 100%;
+    min-width: 980px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 140px;
+    height: 162px;
+    width: 324px;
+    background-image: url("resources/logo.webp");
+    z-index: 2;
+}
+
+.icon-group {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 1030px;
+    height: 40px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.para-icon {
+    margin: 0 5px 0 5px;
+}
+
+#shop-title {
+    background: #d1cac9;
+    min-width: 980px;
+}
+
+#shop-title hr {
+    width: 90px;
+    margin: 5px 0 5px 0;
+    border: 0;
+    border-top: 3px solid black;
+    opacity: 1;
+}
+
+.product-area-wrap {
+    height: auto;
+    width: 100%;
+    background: #fafafa;
+}
+
+.product-cards {
+    width: 280px;
+    height: 440px;
+    position: relative;
+}
+
+.card-img-top {
+    cursor: pointer;
+    z-index: 0;
+}
+
+.pop-up-banner {
+    position: absolute;
+    top: 225px;
+    width: 280px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    color: white;
+    background: #3c3b3b;
+    z-index: 1;
+    transition: 800ms;
+}
+
+.product-body {
+    background: #d1cac9;
+    z-index: 2;
+}
+
+.amazon-logo {
+    width: 70px;
+    height: 30px;
+}
+
+.product-btn:hover {
+    border: 3px solid black;
+    transition: 300ms;
+}
+
+.vid-container {
+    height: 775px;
+    width: 1900px;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#myVideo {
+    min-width: 980px;
+    width: 100%;
+    margin-bottom: -450px;
+    margin-top: -150px;
+}
+
+.vid-desc {
+    content: "";
+    height: 522px;
+    width: 660px;
+    background: whitesmoke;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.vid-desc h1 {
+    font-weight: 300;
+    font-size: 34px;
+    text-transform: uppercase;
+}
+
+.vid-desc hr {
+    width: 45px;
+    margin: 10px 0 25px 0;
+    border: 0;
+    border-top: 3px solid black;
+    opacity: 1;
+}
+
+.vid-desc p {
+    font-size: 18px;
+    font-weight: 400;
+    width: 450px;
+    text-align: center;
+}
+
+.showcase-group {
+    margin: 70px 0 100px 0;
+}
+
+.showcase-card {
+    height: 260px;
+    width: 270px;
+}
+
+.showcase-img {
+    height: 178px;
+    width: 178px;
+}
+
+.showcase-img:hover {
+    opacity: 0;
+    transition: 800ms;
+}
+
+.showcase-body {
+    height: 80px;
+    width: 270px;
+}
+
+#contact-back {
+    background: #b0aaa9;
+    height: 644px;
+}
+
+.form-wrap {
+    height: 575px;
+    width: 659px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+#contact-back hr {
+    width: 45px;
+    margin: 10px 0 25px 0;
+    border: 0;
+    border-top: 3px solid black;
+    opacity: 1;
+}
+
+#fname-field {
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+}
+
+#lname-field {
+    border-top-width: 2px;
+    border-left-width: 1px;
+    border-right-width: 2px;
+    border-bottom-width: 1px;
+}
+
+#email-field {
+    border-top-width: 1px;
+    border-left-width: 2px;
+    border-right-width: 1px;
+    border-bottom-width: 2px;
+}
+
+#order-field {
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.custom-field {
+    border-color: black;
+    height: 56px;
+    width: 249px;
+}
+
+.form-control:active {
+    outline: none !important;
+    border-color: black !important;
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    outline: none !important;
+    border-color: black !important;
+    box-shadow: none !important;
+}
+
+.form-control::placeholder {
+    color: black;
+    font-style: italic;
+}
+
+#message-field {
+    width: 498px;
+    height: 108px;
+    border-color: black;
+    border-top-width: 0px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    resize: none;
+}
+
+.custom-button {
+    background: #373b4d;
+    width: 186px;
+    height: 52px;
+}
+
+.custom-button:hover {
+    background: black;
+}
+
+.footer {
+    height: 162px;
+    min-width: 980px;
+    background: #2f2e2e;
+}
+
+.footer-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px 0 5px;
+}
+
+.icon-group-footer {
+    height: 40px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
