@@ -1,6 +1,31 @@
 import {Box, FormControl, Grid, InputLabel, MenuItem, Select, Typography} from "@mui/material";
 
 function PlayerCard({id, defaultColor, player, playerChoices, setPChoices, availableChoices, setAvailableChoices}) {
+
+    function updateChoices(e) {
+        /** update player choice **/
+        setPChoices(prevState => ({
+            ...prevState,
+            [player]: e.target.value
+        }))
+
+        /** make previous choice available **/
+        if (playerChoices[player] !== defaultColor) {
+            setAvailableChoices(prevState => ({
+                ...prevState,
+                [playerChoices[player]]: !prevState[playerChoices[player]]
+            }))
+        }
+
+        /** make new choice unavailable **/
+        if (e.target.value !== defaultColor) {
+            setAvailableChoices(prevState => ({
+                ...prevState,
+                [e.target.value]: !prevState[e.target.value]
+            }))
+        }
+    }
+
     return (
         <Grid item xs={8} sm={8} md={5} lg={5} sx={{
             display: "flex",
@@ -31,24 +56,7 @@ function PlayerCard({id, defaultColor, player, playerChoices, setPChoices, avail
                         id={id}
                         value={playerChoices[player]}
                         label="Color"
-                        onChange={(e) => {
-                            setPChoices(prevState => ({
-                                ...prevState,
-                                [player]: e.target.value
-                            }))
-                            if (playerChoices[player] !== defaultColor) {
-                                setAvailableChoices(prevState => ({
-                                    ...prevState,
-                                    [playerChoices[player]]: !prevState[playerChoices[player]]
-                                }))
-                            }
-                            if (e.target.value !== defaultColor) {
-                                setAvailableChoices(prevState => ({
-                                    ...prevState,
-                                    [e.target.value]: !prevState[e.target.value]
-                                }))
-                            }
-                        }}
+                        onChange={updateChoices}
                     >
                         <MenuItem value={defaultColor}>none</MenuItem>
                         {Object.keys(availableChoices).map((keyName, i) => {
