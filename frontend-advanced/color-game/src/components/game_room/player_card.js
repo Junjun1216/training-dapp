@@ -1,29 +1,9 @@
-import {Box, FormControl, Grid, InputLabel, MenuItem, Select, Typography} from "@mui/material";
+import {Box, FormControl, Grid, InputLabel, MenuItem, Paper, Select, Typography} from "@mui/material";
 
-function PlayerCard({id, defaultColor, player, playerChoices, setPChoices, availableChoices, setAvailableChoices}) {
+function PlayerCard({id, defaultColor, isCurrentPlayer, player, playerChoices, availableChoices, updateChoices}) {
 
-    function updateChoices(e) {
-        /** update player choice **/
-        setPChoices(prevState => ({
-            ...prevState,
-            [player]: e.target.value
-        }))
-
-        /** make previous choice available **/
-        if (playerChoices[player] !== defaultColor) {
-            setAvailableChoices(prevState => ({
-                ...prevState,
-                [playerChoices[player]]: !prevState[playerChoices[player]]
-            }))
-        }
-
-        /** make new choice unavailable **/
-        if (e.target.value !== defaultColor) {
-            setAvailableChoices(prevState => ({
-                ...prevState,
-                [e.target.value]: !prevState[e.target.value]
-            }))
-        }
+    function handleUpdate(e) {
+        updateChoices(player, e.target.value)
     }
 
     return (
@@ -35,8 +15,8 @@ function PlayerCard({id, defaultColor, player, playerChoices, setPChoices, avail
         }}>
             <Box sx={{
                 width: "100%",
-                height: 350,
-                backgroundColor: playerChoices[player],
+                height: 325,
+                backgroundColor: playerChoices[player].choice,
                 borderRadius: "5%",
                 display: "flex",
                 flexDirection: "column",
@@ -44,8 +24,16 @@ function PlayerCard({id, defaultColor, player, playerChoices, setPChoices, avail
                 alignItems: "center"
             }}
             >
+                <Paper style={{
+                    backgroundImage: `url(${playerChoices[player].profileUrl})`,
+                    width: "100px",
+                    height: "100px",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    marginBottom: "10px"
+                }}/>
                 <Typography variant="h5">
-                    Player {player}
+                    {player}
                 </Typography>
                 <FormControl sx={{
                     width: "80%"
@@ -54,9 +42,10 @@ function PlayerCard({id, defaultColor, player, playerChoices, setPChoices, avail
                     <Select
                         labelId="color-select-label"
                         id={id}
-                        value={playerChoices[player]}
+                        value={playerChoices[player].choice}
                         label="Color"
-                        onChange={updateChoices}
+                        onChange={handleUpdate}
+                        disabled={!isCurrentPlayer}
                     >
                         <MenuItem value={defaultColor}>none</MenuItem>
                         {Object.keys(availableChoices).map((keyName, i) => {
