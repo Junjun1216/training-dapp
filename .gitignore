@@ -1,3 +1,5 @@
 /.idea
 
 /frontend-advanced/color-game/node_modules
+
+/frontend-advanced/color-game/.firebase
