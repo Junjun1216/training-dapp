@@ -164,7 +164,7 @@ function GameRoom() {
                 <label style={{color: "#fff", fontWeight: "bold", marginBottom: "4px"}}>
                     Change Profile Picture
                 </label>
-                <Grid containe spacing={4} flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
+                <Grid flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
                     <Button component={"label"} variant="contained" sx={{
                         backgroundColor: '#35BEB4',
                         color: '#fff',
