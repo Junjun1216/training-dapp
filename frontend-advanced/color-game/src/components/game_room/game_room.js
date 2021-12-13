@@ -7,7 +7,9 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import PlayerCard from "./player_card";
 import AuthContext from "../../AuthContext";
 
-import { getFunctions, httpsCallable } from "firebase/functions";
+import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
+import {getApp} from "firebase-admin/lib/app";
+
 
 const theme = createTheme({
     palette: {
@@ -36,6 +38,7 @@ function GameRoom() {
     const { authToken } = useContext(AuthContext);
     const navigate = useNavigate();
     const functions = getFunctions();
+    connectFunctionsEmulator(functions, "localhost", 5000);
 
     const [playerChoices, setPChoices] = useState({
         p1: {choice: defaultColor},
