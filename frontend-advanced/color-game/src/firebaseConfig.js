@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAZf3JVCfK1P0e4XDS9eynwUjEtj9Q2efI",
-    authDomain: "dapp-training-275b0.firebaseapp.com",
-    projectId: "dapp-training-275b0",
-    storageBucket: "dapp-training-275b0.appspot.com",
-    messagingSenderId: "18018275177",
-    appId: "1:18018275177:web:2c32410fb7c2c91e3177f8",
-    measurementId: "G-Y9R7WV13E4"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

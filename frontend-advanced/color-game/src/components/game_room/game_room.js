@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
 import { Grid, Container, Typography, Button, Input } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -133,6 +134,12 @@ function GameRoom() {
             })
     }
 
+    function handleLogout() {
+        getAuth().signOut().then(() => {
+            navigate("/")
+        })
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <Container maxWidth="xlg" sx={{
@@ -164,7 +171,9 @@ function GameRoom() {
                 <label style={{color: "#fff", fontWeight: "bold", marginBottom: "4px"}}>
                     Change Profile Picture
                 </label>
-                <Grid flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
+                <Grid flexDirection={"row"} justifyContent={"center"} alignItems={"center"} sx={{
+                    marginBottom: "10px"
+                }}>
                     <Button component={"label"} variant="contained" sx={{
                         backgroundColor: '#35BEB4',
                         color: '#fff',
@@ -186,8 +195,18 @@ function GameRoom() {
                             backgroundColor: '#28776D',
                             color: '#fff',
                         },
-                        fontWeight: "bold"
+                        fontWeight: "bold",
+                        marginRight: "10px"
                     }} onClick={handleUpload}>Upload</Button>
+                    <Button variant="contained" sx={{
+                        backgroundColor: '#35BEB4',
+                        color: '#fff',
+                        '&:hover': {
+                            backgroundColor: '#28776D',
+                            color: '#fff',
+                        },
+                        fontWeight: "bold"
+                    }} onClick={handleLogout}>logout</Button>
                 </Grid>
             </Container>
         </ThemeProvider>

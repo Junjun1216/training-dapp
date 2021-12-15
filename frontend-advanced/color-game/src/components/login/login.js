@@ -3,7 +3,7 @@ import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material/styles";
 import { useContext, useState } from "react";
 
-import { getAuth, signInWithEmailAndPassword, setPersistence, inMemoryPersistence } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, setPersistence, inMemoryPersistence } from "firebase/auth";
 import AuthContext from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -39,13 +39,12 @@ function Login() {
 
     const navigate = useNavigate();
 
-    function handleSubmit(e) {
+    function handleLogin(e) {
         e.preventDefault();
 
-        const auth = getAuth();
-        setPersistence(auth, inMemoryPersistence).then(() =>
+        setPersistence(getAuth(), inMemoryPersistence).then(() =>
         {
-            signInWithEmailAndPassword(auth, email, password)
+            signInWithEmailAndPassword(getAuth(), email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
                     setAuthToken(user);
@@ -63,6 +62,21 @@ function Login() {
             setEmail("");
             setPassword("");
         })
+    }
+
+    function handleSignup(e) {
+        e.preventDefault();
+
+        createUserWithEmailAndPassword(getAuth(), email, password).then((userCredential) => {
+            const user = userCredential.user;
+            setAuthToken(user);
+            setError("");
+            setTimeout(navigate("/game-room"), 3000);
+        }).catch((error) => {
+            setError(error.code);
+            setEmail("");
+            setPassword("");
+        });
     }
 
     return (
@@ -106,7 +120,9 @@ function Login() {
                             onChange={(e) => {
                                 setPassword(e.target.value)
                             }}/>
-                            <Button type={"submit"} color="secondary" variant="contained" onClick={handleSubmit}>login</Button>
+                            <Button type={"submit"} color="secondary" variant="contained" onClick={handleLogin}>login</Button>
+                            <hr style={{width: "250px"}}/>
+                            <Button type={"submit"} color="secondary" variant="contained" onClick={handleSignup}>sign up</Button>
                         </form>
                     </Grid>
                 </Grid>
